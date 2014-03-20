@@ -1,0 +1,23 @@
+% title 'POST URL';
+% layout 'default';
+
+<h1>POST URL</h1>
+
+% if ($messages) {
+  <div class="alert alert-danger">
+    <ul>
+% for my $message (@$messages) {
+      <li><%= $message %></li>
+% }
+    </ul>
+  </div>
+% }
+
+<form method="post" action="/create">
+  <div class="form-group">
+    <input name="csrf_token" value="<%= csrf_token %>" type="hidden" />
+    <label for="url">URL</label>
+    <input type="text" class="form-control" id="url" name="url" placeholder="Enter URL" />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

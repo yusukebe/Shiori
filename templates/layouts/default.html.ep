@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shiori - <%= title %></title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  </head>
+  <body>
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Shiori</a>
+      </div>
+    </div>
+    <div class="container">
+      <%= content %>
+    </div>
+  </body>
+</html>

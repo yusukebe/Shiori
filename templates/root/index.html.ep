@@ -1,0 +1,36 @@
+% title 'Top';
+% layout 'default';
+
+<h1>URL LIST</h1>
+<p>
+  <a href="/new"><button type="button" class="btn btn-default">NEW POST</button></a>
+</p>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>URL</th>
+      <th>DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+% for my $entry (@$entries) {
+      <tr>
+        <td><%= $entry->id %></td>
+        <td><a href="<%= $entry->url %>" target="_blank"><%= $entry->url %></a></td>
+        <td><%= $entry->created_at->ymd('/') %> <%= $entry->created_at->hms(':') %></td>
+      </tr>
+% }
+  </tbody>
+</table>
+
+<ul class="pagination">
+% if (my $prev_page = $pager->prev_page) {
+  <li><a href="/?page=<%= $prev_page %>">&laquo;</a></li>
+% }
+  <li><a href="#"><%= $pager->current_page %></a></li>
+% if (my $next_page = $pager->next_page) {
+  <li><a href="/?page=<%= $next_page %>">&raquo;</a></li>
+% }
+</ul>
