@@ -1,6 +1,6 @@
 requires 'Mojolicious';
 requires 'Mouse';
-requires 'FormValidator::Lite';
+requires 'FormValidator::Lite', '0.37';
 requires 'DateTime';
 requires 'DateTime::Format::MySQL';
 requires 'DBI';
